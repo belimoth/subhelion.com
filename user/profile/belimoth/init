@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -o allexport
+
+function publish {
+	cd code
+}
