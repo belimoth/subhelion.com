@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang=en-us>
+<head>
+<meta charset=utf-8>
+<title>SUBHELION</title>
+
+<style>
+
+*, *::before, *::after {
+	box-sizing: border-box;
+	// margin: 0;
+	// padding: 0;
+}
+
+html {
+	background: #000;
+	color: #FFF;
+
+	--ora:#E69F00;
+	--sky:#56B4E9;
+	--gre:#009E73;
+	--yel:#F0E442;
+	--blu:#0072B2;
+	--red:#D55E00;
+	--pur:#CC79A7;
+	--gry:#999999;
+	--bla:#000000;
+	--amb:#F5C710;
+
+	--color-per: var( --pur );
+	--color-pri: var( --ora );
+	--color-pub: var( --sky );
+
+	--color-comradery-0: #1C1C1C;
+	--color-comradery-1: #FFD467;
+	--color-comradery-2: #FDF5E8;
+
+	--color-sweetshop: #E4499C;
+
+	font-family: Verdana;
+}
+
+body {
+	user-select: all;
+}
+
+body > * {
+	user-select: none;
+}
+
+page {
+	display: none;
+}
+
+page:first-child {
+	display: block;
+}
+
+page[hide] {
+	display: none;
+}
+
+page[show] {
+	display: block;
+}
+
+h1, h2, h3, h4, h5, p {
+	user-select: text;
+}
+
+*[per] { color: var( --color-per ); }
+*[pri] { color: var( --color-pri ); }
+*[pub] { color: var( --color-pub ); }
+
+h1, h2, h3, h4 {
+	text-align: center;
+}
+
+div {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+div > h3 {
+	flex: 1 1 0;
+}
+
+div > p {
+	flex: 1 1 0;
+	text-align: center;
+}
+
+section {
+	text-align: center;
+}
+
+main, side {
+	display: flex;
+	justify-content: center;
+
+	padding: 0 10px;
+	flex-wrap: nowrap;
+}
+
+main {
+	font-size: 60px;
+	gap: 10px;
+}
+
+side {
+	width: auto;
+	gap: 6px;
+	font-size:18px;
+	margin: 10px 0;
+}
+
+section > a,
+main > a,
+side > a,
+div  > a {
+	height: 60px;
+	line-height: 60px;
+
+	text-decoration: none;
+	text-align: center;
+
+	background: var( --color );
+	color: #FFF;
+}
+
+a[pub] {
+	--color: var( --color-pub );
+	color: #FFF;
+}
+
+a[pri] {
+	--color: var( --color-pri );
+	color: #FFF;
+}
+
+a[per] {
+	--color: var( --color-per );
+	color: #FFF;
+}
+
+a:hover,
+a:active {
+	background: #FFF;
+	color: var( --color );
+}
+
+a:empty {
+	pointer-events: none;
+}
+
+main > a {
+	flex: 1 1 0;
+	max-width: 240px;
+	height: 240px;
+	line-height: 240px;
+}
+
+side > a {
+	flex: 1 1 0;
+	max-width: 60px;
+	height: 60px;
+	line-height: 60px;
+}
+
+section > a,
+div > a {
+	flex: 0 1 auto;
+	text-align: center;
+	padding: 0 10px;
+}
+
+div > a[tri] {
+	flex: 1 1 0;
+	max-width: 100px;
+}
+
+section > a:hover,
+section > a:active,
+div > a:hover,
+div > a:active {
+	color: #000;
+}
+
+h2 > a[home] {
+	color: #FFF;
+	user-select: all;
+}
+
+h2 > a[home],
+p > a {
+	background: none;
+	display: inline;
+	cursor: pointer;
+	text-decoration: underline;
+	white-space: nowrap;
+}
+
+h2 > a[]home:hover, h2 > a[home]:active,
+p > a:hover, p > a:active {
+	background: none;
+	color: #FFF;
+}
+
+div > h3,
+div > p {
+	max-width: 480px;
+}
+
+date {
+	font-size: 10px;
+}
+
+a[itch] {
+	background: #FA5C5C;
+	color: #FFF;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+a[itch]:hover,
+a[itch]:active {
+	background: #FFF;
+	color: #FA5C5C;
+}
+
+a {
+	cursor: pointer;
+}
+
+a[comradery] {
+	padding: 0;
+	width: 206px;
+	max-width: 206px;
+}
+
+a[comradery]:hover  > svg,
+a[comradery]:active > svg {
+	background: var( --color-comradery-2 );
+}
+
+a[comradery]:hover  > svg path:first-child,
+a[comradery]:active > svg path:first-child {
+	fill: var( --color-comradery-1 );
+}
+
+a[sweetshop] {
+	background: var( --color-sweetshop );
+	color: #FFF;
+	font-weight: 600;
+}
+
+a[sweetshop]:hover,
+a[sweetshop]:active {
+	background: #FFF;
+	color: var( --color-sweetshop );
+}
+
+main a,
+side a,
+a[tri],
+a[href^=join] {
+	text-decoration: underline;
+}
+
+output {
+	display: block;
+	background: var( --red );
+	color: #FFF;
+	text-align: center;
+	line-height: 60px;
+}
+
+div + div {
+	margin-top: 10px;
+}
+
+div[pub] > a {
+	text-decoration: underline;
+}
+
+a[dci] {
+
+}
+
+main a[href=join] {
+	<!-- max-width: 640px; -->
+}
+
+div[app] > a {
+	width: 180px;
+}
+
+form {
+	justify-content: center;
+	text-align: center;
+	display: flex;
+	gap: 6px;
+}
+
+form > input {
+	height: 60px;
+	line-height: 60px;
+	padding: 0 10px;
+	font-size: 18px;
+}
+
+a:hover:not(:active),
+a:focus:not(:active),
+input:focus {
+	outline: 3px solid #FFF;
+}
+
+form > a {
+	color: #FFF;
+	background: var( --color-pub );
+	line-height: 60px;
+	width: 60px;
+	padding: 0 10px;
+}
+
+h2 > a[pub] {
+	background: var( --color-pub );
+}
+
+h2 > a[per] {
+	background: var( --color-per );
+}
+
+h2 > a[pub]:hover,
+h2 > a[pub]:active {
+	background: #FFF;
+	color: var( --color-pub );
+}
+
+h2 > a[per]:hover,
+h2 > a[per]:active {
+	background: #FFF;
+	color: var( --color-per );
+}
+
+h2 > a[pub],
+h2 > a[per] {
+	user-select: none;
+	padding: 0 10px;
+	line-height: 60px;
+}
+
+h2 {
+	line-height: 60px;
+	margin: 6px 0;
+}
+
+a[peer] {
+	user-select: all;
+}
+
+</style>
+
+<body>
+
+<page home>
+
+<output>WARNING: This page is draft.</output>
+
+<h2><a pub style=float:left>Menu</a> WELCOME TO <a home href=https://subhelion.com>SUBHELION.COM</a> <a per style=float:right;>None</a></h2>
+
+<form><input></input><a href=find>FIND</a></form>
+
+<br>
+<br>
+<br>
+
+<main>
+<a pub href=http://play.subhelion.com>PLAY</a>
+<a pri href=http://shop.subhelion.com>SHOP</a>
+<a per href=http://user.subhelion.com>USER</a>
+</main>
+
+<side>
+<a pub href=http://chat.subhelion.com/public  >CHAT</a>
+<a pub href=http://read.subhelion.com         >READ</a>
+<a pub href=http://wave.subhelion.com         >WAVE</a>
+<a pri href=http://chat.subhelion.com/private >CHAT</a>
+<a pri href=http://data.subhelion.com         >DATA</a>
+<a pri href=http://help.subhelion.com         >HELP</a>
+<a per href=http://chat.subhelion.com/personal>CHAT</a>
+<a per href=http://fund.subhelion.com         >FUND</a>
+<a per href=http://vote.subhelion.com         >VOTE</a>
+</side>
+
+<br>
+<br>
+<br>
+
+<h1> THE SUBHELION SOCIETY </h1>
+
+<div>
+<h3 per> TRUST       <br> <date> 202X </date> </h3>
+<h3 pub> FOUNDATION  <br> <date> 2026 </date> </h3>
+<h3 pri> CORPORATION <br> <date> 2012 </date> </h3>
+</div>
+
+<div>
+<p per><i>The Subhelion Trust</i> is an Employee Ownership Trust (EOT) that owns and operates the <i>Corporation</i> in conjunction with the <i>Foundation</i> for the benefit of its authors and workers.</p>
+<p pub><i>The Subhelion Foundation</i> is a non-profit organization dedicated to creating a new future with cooperative business, structured community, and ethical technology. It accomplishes its mission by giving material and organizational support to <a>the precarious</a> and their champions. </p>
+<p pri><i>The Subhelion Corporation</i> is a for-profit production company for educational and entertainment media.</p>
+</div>
+
+<div>
+<a pub tri href=call>CONTACT</a>
+<a pub tri href=give>DONATE</a>
+<a pub tri href=more>MORE</a>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<h2>CHAPTERS</h2>
+
+<div>
+<a>AUSTIN</a>
+<a>CHICAGO</a>
+<a>MINNEAPOLIS</a>
+<a>NYC</a>
+<a>OAKLAND</a>
+<a>SEATTLE</a>
+</div>
+
+<div>
+<a href=join#chapter>Propose a chapter</a>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<h2>MEMBERS</h2>
+
+<section>
+<p>todo</p>
+</section>
+
+<br>
+<br>
+<br>
+<br>
+
+<h2>OUR CAUSES</h2>
+
+<div>
+<a a4te href=https://transequality.org    target=_blank >A4TE</a>
+<a bds  href=https://bdsmovement.net      target=_blank >BDS</a>
+<a blm  href=https://blacklivesmatter.com target=_blank >BLM</a>
+<a dsa  href=https://www.dsausa.org       target=_blank >DSA</a>
+<!-- <a ubi href=todo>UBI</a> -->
+</div>
+
+<div>
+<a href=join#cause>Suggest a cause</a>
+</div>
+
+<h2>PAST CAUSES</h2>
+
+<div>
+<a life="2015 -- 2023" href=https://chicagobond.org >CCBF</a>
+<a life="2016 -- 2023" href=https://endmoneybond.org>CEMB</a>
+</div>
+
+<div>
+<p>Victory!</p>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<h2>OUR PROJECTS</h2>
+
+<br>
+
+<section>
+<h3 per>OMEZZO MUSIC & INSTRUMENTS</h3>
+<p>An experiment in music and interface.
+<p>Hear some <a =https://soundcloud.com/omezzo target=_blank>sounds</a> from our debut exhibition.
+<h3><date>2020, Chicago (Archived)</date></h3>
+</section>
+
+<br>
+
+<section>
+<h3 per>RUST WARE</h3>
+<p>todo</p>
+<h3><date>2018 (Archived)</date></h3>
+</section>
+
+<br>
+
+<section>
+<h3 per>BOSS GUTS</h3>
+<p>todo</p>
+<h3><date>2016, Chicago (Archived)</date></h3>
+</section>
+
+<br>
+
+<section>
+<h3 per>MIDWEST USA<br>GAME & REMOTE CONTROL<br>APPRECIATION SOCIETY AND<br>HISTORICAL MUSEUM<br>(MUGCASHM)</h3>
+<h3><date>2014, Chicago (Archived)</date></h3>
+</section>
+
+<br>
+
+<h3 pri>SUBHELION GAMES & SOFTWARE</h3>
+
+<h3><date>2012, Chicago</date></h3>
+
+<h4>Games & Toys</h4>
+
+<div><a>SIMIR</a></div>
+<div><p>todo</p></div>
+<h3><date>ETA 2030</date></h3>
+
+<br>
+<br>
+
+<div><a>CHRONIX</a></div>
+<div><p>todo</p></div>
+<h3><date>ETA 2028</date></h3>
+
+<br>
+<br>
+
+<div pub><a dci href=https://dreadcheck.com target=_blank>DREAD CHECK</a></div>
+<div><p>todo</p></div>
+<h3><date>ALPHA</date></h3>
+
+<br>
+<br>
+
+<h4>Tools</h4>
+
+<div pub><a dci href=https://dreadcheck.com target=_blank>CLAY</a></div>
+<div><p>Embedded game engine & development framework.</p></div>
+<h3><date>ALPHA</date></h3>
+
+<br>
+<br>
+
+<h4>Services</h4>
+
+<div app>
+<a pub href>cafe.subhelion.com</a>
+<a pub href>chat.subhelion.com</a>
+<a pub href>play.subhelion.com</a>
+<a pub href>read.subhelion.com</a>
+<a pub href>wave.subhelion.com</a>
+</div>
+
+<div app>
+<a pri href>code.subhelion.com</a>
+<a pri href>data.subhelion.com</a>
+<a pri href>shop.subhelion.com</a>
+<a pri href>help.subhelion.com</a>
+</div>
+
+<div app>
+<a per href>fund.subhelion.com</a>
+<a per href>user.subhelion.com</a>
+<a per href>vote.subhelion.com</a>
+</div>
+
+<div app>
+<a pub href>find.subhelion.com</a>
+<a pub href>site.subhelion.com</a>
+</div>
+
+<div app>
+<a href=join#project>Share your project</a>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<h2>OUR PARTNERS</h2>
+
+<section>
+<p>todo</p>
+</section>
+
+<div>
+<a href=join#partner>Partner with us</a>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<h2>OUR PEERS</h2>
+
+<style>
+
+svg {
+	background: var(--color-comradery-1);
+	padding: 0 20px;
+	height: 64px;
+}
+
+</style>
+
+<h3> 2026 </h3>
+
+<div>
+<a peer sweetshop href=https://sweetshop.app>Sweet Shop</a>
+</div>
+
+<h3> 2020 </h3>
+
+<div>
+<a peer comradery href=https://comradery.co target=_blank>
+<svg width=206 height=24 viewBox="0 0 206 24" xmlns=http://www.w3.org/2000/svg>
+<path fill-rule=evenodd clip-rule=evenodd d="M16.5277 10.3501C16.2714 8.25091 14.7687 6.91509 12.4618 6.91509C9.401 6.91509 7.55653 9.23525 7.55653 13.2378C7.55653 17.401 9.44124 19.5605 12.4316 19.5605C14.653 19.5605 16.1708 18.3653 16.5277 16.3464L21.6491 16.3766C21.2721 20.0878 18.0857 24 12.3311 24C6.63682 24 2.38994 20.133 2.38994 13.2378C2.38994 6.3124 6.74234 2.4756 12.3311 2.4756C17.3972 2.4756 21.1364 5.33815 21.6491 10.3552H16.5277V10.3501ZM25.8959 13.2378C25.8959 20.133 30.2483 24 35.8974 24C41.5314 24 45.9089 20.1632 45.9089 13.2378C45.9089 6.3124 41.5263 2.4756 35.8974 2.4756C30.2483 2.4756 25.8959 6.3124 25.8959 13.2378ZM31.0675 13.2378C31.0675 9.1348 32.8768 6.91509 35.8974 6.91509C38.928 6.91509 40.7272 9.1348 40.7272 13.2378C40.7272 17.3408 38.928 19.5605 35.8974 19.5605C32.8819 19.5605 31.0675 17.3408 31.0675 13.2378ZM62.0469 15.7335L56.7247 2.76159H50.4472V23.7135H55.3824V10.7717H55.5586L60.5942 23.5778H63.7455L68.7816 10.842H68.9573V23.7135H73.893V2.76159H67.6155L62.2934 15.7335H62.0469ZM87.312 2.76159H78.6573V23.7135H83.7236V16.542H86.3221L90.1515 23.7135H95.6801L91.3275 15.7335C93.6295 14.6889 94.9614 12.6349 94.9614 9.73716C94.9614 5.43331 92.0214 2.76159 87.312 2.76159ZM89.7145 9.73716C89.7145 11.6807 88.4929 12.5495 86.2211 12.5495V12.5545H83.7236V6.84448H86.2211C88.4979 6.84448 89.7145 7.79367 89.7145 9.73716ZM98.4141 23.7135L105.49 2.76159H112.235L119.312 23.7135H113.863L112.482 19.3142H105.244L103.862 23.7135H98.4141ZM111.27 15.4673L108.938 8.03972H108.772L106.451 15.4673H111.27ZM123.157 2.76159V23.7135H130.906C137.294 23.7135 141.254 19.7762 141.254 13.2275C141.254 6.68879 137.294 2.76159 130.896 2.76159H123.157ZM136.184 13.2275C136.184 17.7573 134.248 19.3945 130.715 19.3945V19.3995H128.227V7.08051H130.645C134.248 7.08051 136.184 8.71773 136.184 13.2275ZM160.413 2.76159H145.798V23.7185H160.418V19.6055H150.864V15.2966H159.669V11.1735H150.864V6.87464H160.413V2.76159ZM173.832 2.76159H165.178V23.7135H170.243V16.542H172.842L176.672 23.7135H182.2L177.848 15.7335C180.15 14.6889 181.482 12.6349 181.482 9.73716C181.482 5.43331 178.541 2.76159 173.832 2.76159ZM176.234 9.73716C176.234 11.6807 175.013 12.5495 172.741 12.5495V12.5545H170.243V6.84448H172.741C175.018 6.84448 176.234 7.79367 176.234 9.73716ZM194.896 11.5301L190.463 2.76159H184.799L192.468 16.7178V23.7135H197.504V16.7178L205.173 2.76159H199.514L195.081 11.5301H194.896Z" fill=#FDF5E8></path>
+<path fill-rule=evenodd clip-rule=evenodd d="M44.617 11.3096C44.617 4.38803 40.2905 0 34.0564 0C27.8117 0 23.5059 4.37927 23.5059 11.3096C23.5059 18.22 27.8223 22.6192 34.0564 22.6192C40.2905 22.6192 44.617 18.2311 44.617 11.3096ZM24.604 11.3096C24.604 4.9791 28.4231 1.0948 34.0564 1.0948C39.6799 1.0948 43.519 4.98853 43.519 11.3096C43.519 17.6306 39.6799 21.5244 34.0564 21.5244C28.4342 21.5244 24.604 17.6207 24.604 11.3096ZM34.0564 4.43947C37.4638 4.43947 39.4353 6.97993 39.4353 11.3096C39.4353 15.6392 37.4639 18.1797 34.0564 18.1797C30.6588 18.1797 28.6776 15.6324 28.6776 11.3096C28.6776 6.98453 30.6556 4.43947 34.0564 4.43947ZM29.7756 11.3096C29.7756 7.53692 31.3321 5.53427 34.0564 5.53427C36.7869 5.53427 38.3373 7.53208 38.3373 11.3096C38.3373 15.0871 36.7869 17.0849 34.0564 17.0849C31.3351 17.0849 29.7756 15.0799 29.7756 11.3096ZM0 11.3144C0 4.39391 4.29728 0.00481165 10.4902 0.00481165C15.9578 0.00481165 19.8239 3.18549 20.3543 8.37629L20.4159 8.97917H14.1377L14.1377 8.465L14.1228 8.35568C13.8581 6.63559 12.64 5.59346 10.7698 5.54115L10.6209 5.53908C7.88135 5.53908 6.26464 7.60925 6.26464 11.3144C6.26464 15.0967 7.85296 17.0897 10.5907 17.0897C12.5506 17.0897 13.8365 16.0797 14.1461 14.328L14.2265 13.8729L20.4152 13.9093L20.3543 14.5083C19.8948 19.033 16.0022 22.624 10.4902 22.624C4.2402 22.624 0 18.252 0 11.3144ZM19.1549 7.72573C18.4167 3.6352 15.2341 1.17383 10.6973 1.10126L10.4902 1.09961C4.9097 1.09961 1.09803 4.99273 1.09803 11.3144C1.09803 17.6554 4.85502 21.5292 10.4902 21.5292C15.1546 21.5292 18.4678 18.7151 19.1652 15.061L19.1765 14.9966L15.1253 14.973L15.0917 15.0943C14.5262 16.9904 12.9325 18.1294 10.7513 18.1826L10.5907 18.1845C7.18391 18.1845 5.16661 15.6532 5.16661 11.3144C5.16661 7.05609 7.20632 4.44428 10.6208 4.44428C12.9608 4.44428 14.6386 5.71462 15.1281 7.77842L15.1512 7.88421H19.1815L19.1549 7.72573ZM55.2522 0.285995H48.0573V22.3327H54.0907L54.0906 11.2923L58.3789 22.1971H62.2784L66.5669 11.3509L66.5675 22.3327H72.6011V0.285995H65.4061L60.329 12.6592L55.2522 0.285995ZM71.5025 1.38054V21.2375H67.6649L67.6655 8.36641H66.5671L61.5308 21.1023H59.1272L54.092 8.29612H52.9927L52.9925 21.2375H49.1549V1.38054H54.5144L59.8374 14.3527H60.8206L66.1431 1.38054H71.5025ZM93.6696 7.80899C93.6696 3.19474 90.4766 0.285995 85.4711 0.285995H76.2674V22.3327H82.4318V15.1608H84.1507L87.981 22.3327H94.7627L90.2393 14.0392L90.3525 13.9766L90.5114 13.8825C92.5534 12.6371 93.6696 10.529 93.6696 7.80899ZM77.3655 1.38054L85.4711 1.3808L85.6679 1.38242C89.9706 1.45403 92.5715 3.88204 92.5715 7.80899C92.5715 10.4438 91.4063 12.3327 89.2592 13.307L88.7227 13.5505L92.9152 21.2375H88.64L84.8104 14.0664H81.3338V21.2375H77.3655V1.38054ZM84.3753 4.37392C86.9601 4.37392 88.4171 5.56272 88.4171 7.81403C88.4171 9.86047 87.2135 10.9746 85.0146 11.1494L84.9243 11.1555V11.1787H81.3283V4.37392H84.3753ZM82.4263 5.46853L84.3753 5.46872L84.5286 5.47021C86.4435 5.50786 87.3191 6.26209 87.3191 7.81403C87.3191 9.37952 86.4235 10.079 84.3753 10.079H83.8263V10.0837H82.4263V5.46853ZM103.25 0.285995H110.784L118.23 22.3327H111.614L110.232 17.9328H103.801L102.42 22.3327H95.8042L103.25 0.285995ZM109.995 1.38054H104.039L97.332 21.2375H101.613L102.995 16.8386H111.039L112.421 21.2375H116.701L109.995 1.38054ZM107.501 5.56416H106.528L103.863 14.0865H110.176L107.501 5.56416ZM107.015 7.68276L105.355 12.9915H108.681L107.015 7.68276ZM139.962 11.2993C139.962 4.48604 135.784 0.285995 129.055 0.285995H120.766V22.3327H129.065L129.274 22.3313C135.872 22.2447 139.962 18.0506 139.962 11.2993ZM121.864 1.38054L129.055 1.3808L129.258 1.38217C135.257 1.4635 138.864 5.1577 138.864 11.2993C138.864 17.5197 135.176 21.2379 129.065 21.2379L121.864 21.2375V1.38054ZM128.799 4.60493C132.893 4.60493 134.886 6.68144 134.886 11.2993C134.886 15.6434 133.137 17.7511 129.58 17.9906L129.418 18.0002V18.0188H125.832V4.60493H128.799ZM126.931 5.69953L128.799 5.69973L128.965 5.70097C132.324 5.75121 133.788 7.34053 133.788 11.2993C133.788 15.3322 132.283 16.9189 128.869 16.9189H128.32V16.924H126.931V5.69953ZM159.121 0.285995H143.403V22.3377H159.121V17.1299L149.567 17.1298V13.9155L158.373 13.9157V8.69786L149.567 8.69764V5.49371L159.121 5.49383V0.285995ZM158.023 1.38054V4.39891L148.469 4.39903V9.79266L157.274 9.79244V12.8207L148.469 12.8209V18.2247L158.023 18.2246V21.2424H144.501V1.38054H158.023ZM180.19 7.80899C180.19 3.19474 176.997 0.285995 171.991 0.285995H162.783V22.3327H168.952V15.1608H170.671L174.501 22.3327H181.283L176.76 14.0392L176.873 13.9766L177.032 13.8825C179.074 12.6371 180.19 10.529 180.19 7.80899ZM163.881 1.38054L171.991 1.3808L172.188 1.38242C176.491 1.45403 179.092 3.88204 179.092 7.80899C179.092 10.4438 177.927 12.3327 175.78 13.307L175.243 13.5505L179.436 21.2375H175.16L171.331 14.0664H167.854V21.2375H163.881V1.38054ZM170.901 4.37392C173.485 4.37392 174.942 5.56272 174.942 7.81403C174.942 9.86047 173.739 10.9746 171.54 11.1494L171.45 11.1555V11.1787H167.854V4.37392H170.901ZM168.952 5.46853L170.901 5.46872L171.054 5.47021C172.969 5.50786 173.844 6.26209 173.844 7.81403C173.844 9.37952 172.949 10.079 170.901 10.079H170.352V10.0837H168.952V5.46853ZM188.96 0.285995H182.031L190.078 14.9287L190.078 22.3327H196.212L196.211 14.9303L204.254 0.285995H197.33L193.145 8.56517L188.96 0.285995ZM198.006 1.38054H202.401L195.114 14.6495L195.113 21.2375H191.176L191.176 14.6495L183.884 1.38054H188.283L192.716 10.1492H193.574L198.006 1.38054Z" fill=black></path>
+</svg>
+</a>
+</div>
+
+<h3> 2013 </h3>
+
+<div>
+<a peer itch href=https://itch.io/docs/general/about target=_blank>itch.io</a>
+</div>
+
+<br>
+
+<div>
+<a href=join#peer>Salute a peer</a>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<main>
+<a per href=join>JOIN</a>
+</main>
+
+<br>
+<br>
+<br>
+<br>
+
+</page>
+
+<page play>
+</page>
+
+<page shop>
+</page>
+
+<page user>
+</page>
+
+<page foundation>
+
+<h1>Who are we for?</h1>
+
+THE CHARITABLE
+
+To be truly charitable in this world you must <a>put yourself at risk of disenfranchisement</a> along with the meek you support. We treat allies as comrades-in-arms with standing.
+
+THE DISABLED, THE YOUNG, AND THE OLD
+
+<a>The center of our society exists at its edge.</a> We hold our various assemblies to practices that maximize meaningful participation from people that would otherwise be excluded.
+
+THE SUBALTERN
+
+This world is a place of <a>cultural hegemony</a>. We amplify marginalized voices and uplift indigineous and diaspora cultures to hold them in greater standing than our metropolitan elements.
+
+THE VIRTUOUS
+
+To be truly virtuous in this world you must <a>put yourself at risk of disenfranchisement</a> along with the weak you protect. <a>Find meaningful work with us.</a>
+
+THE WEARY
+
+Something new under the sun, for everyone else who wants to see the world grow.
+
+<h2>What do we do?</h2>
+
+</page>
+
+<page>
+
+</page>
+
+<script demo>
+	document.querySelectorAll( "a" ).forEach( ( el, i ) => {
+		el.addEventListener( "click", ( event ) => {
+			event.stopImmediatePropagation();
+			event.preventDefault();
+			return false;
+		});
+	});
+</script>
