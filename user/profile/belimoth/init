@@ -3,5 +3,14 @@
 set -o allexport
 
 function publish {
-	cd code
+	cd ./code
+
+	set -o noglob
+
+	site=s3://www.subhelion.com
+	dist=E1KQI2QRNN6CYG
+
+	aws --profile subhelion.com s3 rm     $site --recursive
+	aws --profile subhelion.com s3 sync . $site --content-type text/html
+	aws --profile subhelion.com cloudfront create-invalidation --distribution-id $dist --paths "/*"
 }
