@@ -12,8 +12,10 @@ function publish {
 	site=s3://www.subhelion.com
 	dist=E1KQI2QRNN6CYG
 
-	aws --profile subhelion.com s3 rm           $site --recursive
-	aws --profile subhelion.com s3 sync /a/code $site --content-type text/html
+	aws --profile subhelion.com s3 rm                      $site --recursive
+	aws --profile subhelion.com s3 sync /a/code/index.html $site --content-type text/html
+	aws --profile subhelion.com s3 sync /a/code/index.js   $site --content-type text/javascript
+	aws --profile subhelion.com s3 sync /a/code/style.css  $site --content-type text/css
 	aws --profile subhelion.com cloudfront create-invalidation --distribution-id $dist --paths "/*"
 }
 
