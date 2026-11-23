@@ -2,15 +2,19 @@
 
 set -o allexport
 
+use a
+
 function publish {
-	cd ./code
+	cd /a/code
 
 	set -o noglob
 
 	site=s3://www.subhelion.com
 	dist=E1KQI2QRNN6CYG
 
-	aws --profile subhelion.com s3 rm     $site --recursive
-	aws --profile subhelion.com s3 sync . $site --content-type text/html
+	aws --profile subhelion.com s3 rm           $site --recursive
+	aws --profile subhelion.com s3 sync /a/code $site --content-type text/html
 	aws --profile subhelion.com cloudfront create-invalidation --distribution-id $dist --paths "/*"
 }
+
+code /a --reuse-window
