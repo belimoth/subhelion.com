@@ -472,3 +472,29 @@ output + h2 > span {
 div[app] {
 	flex-wrap: wrap;
 }
+
+svg {
+	background: var(--color-comradery-1);
+	padding: 0 20px;
+	height: 60px;
+}
+
+a[peer] {
+	font-weight: 600;
+}
+
+a[comradery] {
+    width: 180px;
+}
+
+a[peer] {
+    width: 180px;
+    white-space: wrap;
+    line-height: 20px;
+    overflow: hidden;
+    min-width: 180px;
+}
+
+div[app] a[peer] {
+    line-height: 60px;
+}
