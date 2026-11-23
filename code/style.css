@@ -468,3 +468,7 @@ output + h2 > span {
 	white-space: wrap;
 	line-height: 30px;
 }
+
+div[app] {
+	flex-wrap: wrap;
+}
