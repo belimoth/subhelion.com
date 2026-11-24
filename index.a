@@ -1,0 +1,385 @@
+a
+||
+html
+
+title SUBHELION
+
+output WARNING: This page is drafty.
+
+top
+	menu
+	profile None
+	WELCOME TO [SUBHELION.COM]
+end
+
+find Query...
+
+br
+br
+
+h2; [a pub top; Menu][a per top; None] WELCOME TO [a home; SUBHELION.COM; https://subhelion.com]
+
+br
+br
+
+form;[input Query... ][a; FIND; find]
+
+br
+br
+br
+
+main
+	a pub; PLAY; http://play.subhelion.com
+	a pri; SHOP; http://shop.subhelion.com
+	a per; USER; http://user.subhelion.com
+end
+
+side
+	a pub; CHAT; http://chat.subhelion.com/public
+	a pub; READ; http://read.subhelion.com
+	a pub; WAVE; http://wave.subhelion.com
+	a pri; CHAT; http://chat.subhelion.com/private
+	a pri; DATA; http://data.subhelion.com
+	a pri; HELP; http://help.subhelion.com
+	a per; CHAT; http://chat.subhelion.com/personal
+	a per; FUND; http://fund.subhelion.com
+	a per; VOTE; http://vote.subhelion.com
+end
+
+br
+br
+br
+
+h1 THE SUBHELION SOCIETY
+
+div
+	h3 per; TRUST       [br][date 202X]
+	h3 pub; FOUNDATION  [br][date 2026]
+	h3 pri; CORPORATION [br][date 2012]
+end
+
+div
+	p per; [i The Subhelion Trust      ] is an Employee Ownership Trust (EOT) that owns and operates the [i Corporation] in conjunction with the [i Foundation] for the benefit of its artists, authors, and workers.
+	p pub; [i The Subhelion Foundation ] is a non-profit organization dedicated to creating a new future with cooperative business, structured community, and ethical technology. It accomplishes its mission by giving material and organizational support to [a; the precarious] and their champions.
+	p pri; [i The Subhelion Corporation] is a for-profit production company for educational and entertainment media.
+end
+
+div
+	a pub tri; CONTACT; call
+	a pub tri; DONATE;  give
+	a pub tri; MORE;    more
+end
+
+br
+br
+br
+br
+
+h2; CHAPTERS
+
+div
+	a; AUSTIN
+	a; CHICAGO
+	a; MINNEAPOLIS
+	a; NYC
+	a; OAKLAND
+	a; SEATTLE
+end
+
+div; a; Propose a chapter; join#chapter
+
+br
+br
+br
+br
+
+h2; MEMBERS
+
+section
+	img pub; data/image/user/admin.png
+	img pub; data/image/user/guest.png
+end
+
+section
+	img pri; data/image/user/belimoth.jpg
+	img pri; data/image/user/capntastic.jpg
+	img pri; data/image/user/josiah.jpg
+	img pri; data/image/user/scutanddestroy.jpg
+	img pri; data/image/user/sgtdogwater.jpg
+	img pri; data/image/user/shrugseph.jpg
+	img pri; data/image/user/tegiminis.jpg
+	img pri; data/image/user/turnipjuice.jpg
+	img pri; data/image/user/voidshaper.jpg
+end
+
+section
+	img per; data/image/user/admin.png
+	img per; data/image/user/admin.png
+	img per; data/image/user/admin.png
+	img per; data/image/user/admin.png
+	img per; data/image/user/admin.png
+	img per; data/image/user/admin.png
+	img per; data/image/user/admin.png
+	img per; data/image/user/admin.png
+	img per; data/image/user/admin.png
+	img per; data/image/user/admin.png
+	img per; data/image/user/admin.png
+	h4; date; 12 anonymous members
+end
+
+br
+br
+br
+br
+
+h2; OUR ALLIANCES
+
+div
+	a; Art
+	a; Code
+	a; Design
+	a; Text
+	a; Voice
+end
+
+<h2>OUR CAUSES</h2>
+
+div
+	a a4te; A4TE; https://transequality.org
+	a asan; ASAN; https://autisticadvocacy.org
+	a bds;  BDS;  https://bdsmovement.net
+	a blm;  BLM;  https://blacklivesmatter.com
+	a cwa;  CWA;  https://cwa-union.org
+	a dsa;  DSA;  https://www.dsausa.org
+	a dsa;  R2R;  https://www.repair.org/stand-up
+	a ubi;  UBI;  https://en.wikipedia.org/wiki/universal_basic_income
+end
+
+div; a; Suggest a cause; join#cause
+
+h2; PAST CAUSES
+
+div
+	a 2015 -- 2023; CCBF; https://chicagobond.org
+	a 2016 -- 2023; CEMB; https://endmoneybond.org
+end
+
+div; p; Victory!
+
+br; br; br
+
+h3; "What do the colors mean?"
+
+div
+	a pub tri; Public
+	a pri tri; Private
+	a per tri; Personal
+end
+
+br; br; br; br
+
+<h2>OUR PROJECTS</h2>
+
+br
+
+section
+	h3 pub; OMEZZO ON THE L
+	p; Coming soon!
+	h4; date 202X, Chicago (Upcoming)
+end
+
+br
+
+section
+	h3 pub; OAK PARK POP SHOP
+	p; Coming soon!
+	h4; date 202X, Chicago
+end
+
+br
+
+section
+	h3 per; MUD DUCK RADIO
+	h4; date 2026, USA (Cancelled)
+end
+
+br
+
+section
+	h3 pri; SECOND CITY SPECTRUM CLUB
+	h4; date 2026, Chicago
+end
+
+br
+
+section
+	h3 per; OMEZZO MUSIC & INSTRUMENTS
+	p; An experiment in music and interface; Live collaborative composition in a ready-made space with free and inexpensive instruments. Hear some [[sounds]] from our debut exhibition. << [a; ''; https://soundcloud.com/omezzo]
+	h4; date 2020, Chicago (Archived)
+end
+
+br
+
+section
+	h3 per; RUST WARE
+	h4; date 2018 (Archived)
+end
+
+br
+
+section
+	h3 per; BOSS GUTS
+	p; Community workshops for game development, programming, and reverse engineering.
+	h4; date 2016, Chicago (Archived)
+end
+
+br
+
+section
+	h3 per; BRODZKY BOOKS
+	h4; date 2016 (Archived)
+end
+
+br
+
+section
+	h3 per; MIDWEST USA[br]GAME & REMOTE CONTROL[br]APPRECIATION SOCIETY AND[br]HISTORICAL MUSEUM[br](MUGCASHM)
+	h4; date 2014, Chicago (Archived)
+end
+
+br
+
+h3 pri; SUBHELION GAMES & SOFTWARE
+h4; date 2012, Chicago
+
+h4; Games & Toys
+
+div; a; SIMIR
+h4; date ETA 2030
+
+br
+
+div; a; CHRONIX
+h4; date ETA 2028
+
+br
+
+div; a dci; DREAD CHECK; https://dreadcheck.com
+div; p; Fractal first-person shooter and collaborative science-fiction anthology with 12 authors and counting!
+h4; date ALPHA
+
+br
+
+h4; Tools
+
+div; a; CLAY
+div; p; Embedded game engine & development framework.
+h4; date ALPHA
+
+br; br
+
+h4; Services
+
+div app
+	a pub; cafe.subhelion.com
+	a pub; chat.subhelion.com
+	a pub; play.subhelion.com
+	a pub; read.subhelion.com
+	a pub; wave.subhelion.com
+end
+
+div app
+	a pri; code.subhelion.com
+	a pri; data.subhelion.com
+	a pri; shop.subhelion.com
+	a pri; help.subhelion.com
+end
+
+div app
+	a per; fund.subhelion.com
+	a per; user.subhelion.com
+	a per; vote.subhelion.com
+end
+
+div app
+	a pub; find.subhelion.com
+	a pub; site.subhelion.com
+end
+
+div app
+	a; Share your project; join#project
+end
+
+br
+br
+br
+br
+
+h2; OUR COUNCILS & INITIATIVES
+
+<<
+|| section 0;   p [Constitution Council]                               | Mandatory virtual council that determines if the constitution needs to be rewritten
+|  section 0;   p [Foundation Council];                               ||
+|  section 0.0; p Strategy, Treasury, Priority;                       ||
+|  section 0.1; p Saint Anthony Initiative;                           ||
+|  section 0.1; p Saint Francis Initiative;                           ||
+|  section 1;   p [Frontier Council];                                 ||
+|  section 1.0; p Planning, Programs, Proposals;                      ||
+|  section 1.1; p 2222 Program;                                       || Participation-based acquisition budget for members ($2000), profiles ($200), customers ($20), users ($2)
+|  section 1.1; p EEE Initiative;                                     || Emprace Extend Extinguish
+|  section 2;   p [Outreach Council];                                 ||
+|  section 2.0; p Onboarding & Propaganda;                            ||
+|  section 3;   p [Scaffold Council];                                 ||
+|  section 3;   p Dignity, Privacy, Safety, Security, Stability;      ||
+|  section 3;   p Abdication Initiative;                              ||
+|  section 4;   p [Welfare Council];                                  ||
+|  section 4.0; p Diversity, Inclusivity, Positivity, Representation; ||
+|  section 4.1; p Code of Conduct;                                    ||
+|  section 4.1; p CHUD Initiative;                                    || Characters Here Unwelcome Defense
+
+br; br; br; br
+
+h2; OUR PARTNERS
+
+div; a; Partner with us; join#partner
+
+br; br; br; br
+
+h2; OUR PEERS
+
+div app
+	a peer 2026 swsh; Sweet Shop;      https://sweetshop.app
+	a peer 2020 coco; [svg comradery]; https://comradery.co
+	a peer 2013 itch; itch.io;         https://itch.io/docs/general/about
+end
+
+div
+	a peer 2022;     Breeze Wiki;                                 https://breezewiki.com
+	a peer 2019 ctl; Chicago Tool Library;                        https://www.chicagotoollibrary.org
+	a peer 2013 ray; raylib;                                      https://www.raylib.com
+	a peer 2009;     Workshop 88;                                 https://workshop88.com
+	a peer 2007 otw; Organization for Transformative Works (OTW); https://www.transformativeworks.org
+	a peer 2002;     The Cutting Room Floor (TCRF);               https://tcrf.net
+end
+
+br
+
+a; Salute a peer; join#peer
+
+br; br; br; br
+
+main a; JOIN; join
+
+br; br; br; br
+
+<script demo>
+
+document.querySelectorAll( "a" ).forEach( ( el, i ) => {
+	el.addEventListener( "click", ( event ) => {
+		event.stopImmediatePropagation();
+		event.preventDefault();
+		return false;
+	});
+});
+
+</script>

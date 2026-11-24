@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -o errexit
+
+use a_script
+
+a /a/index.a /a/code/test.html
+a /a/style.a /a/code/test.css
