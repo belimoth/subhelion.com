@@ -9,4 +9,6 @@ use a
 
 path /a/user
 
+cd /a
+
 code /a --reuse-window
