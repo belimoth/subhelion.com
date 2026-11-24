@@ -1,24 +1,12 @@
 #!/bin/bash
 
+set -o errexit
 set -o allexport
 
 use a
 
-function publish {
-	cd /a/code
+[[ -s /a/code/data ]] || ln --symbolic /a/void/data /a/code/data
 
-	set -o noglob
+path /a/user
 
-	site=s3://www.subhelion.com
-	dist=E1KQI2QRNN6CYG
-
-	aws --profile subhelion.com s3 rm                $site --recursive
-	aws --profile subhelion.com s3 sync index.html   $site --content-type text/html
-	aws --profile subhelion.com s3 sync staging.html $site --content-type text/html
-	aws --profile subhelion.com s3 sync index.js     $site --content-type text/javascript
-	aws --profile subhelion.com s3 sync style.css    $site --content-type text/css
-	aws --profile subhelion.com cloudfront create-invalidation --distribution-id $dist --paths "/*"
-}
-
-cd /a
-code . --reuse-window
+code /a --reuse-window
