@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo ok
-
 function push_code() {
 	code_push
 }
@@ -12,6 +10,10 @@ silo=none
 	[[ $1 == code ]] && silo=code
 	[[ $1 == data ]] && silo=data
 	[[ $1 == site ]] && silo=site
+	shift
 }
 
-echo $silo
+echo silo: $silo
+
+[[ $silo == code ]] && code_push "$@"
+[[ $silo == site ]] && site_push "$@"
