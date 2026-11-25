@@ -11,4 +11,4 @@ path /a/user
 
 cd /a
 
-code /a --reuse-window
+MSYS_NO_PATHCONV=1 code /a --reuse-window

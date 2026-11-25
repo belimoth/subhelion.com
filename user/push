@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo ok ok ok
+
 function push_code() {
 
 }
@@ -7,3 +9,26 @@ function push_code() {
 function push_site() {
 
 }
+
+silo=none
+
+echo $silo
+echo $silo
+echo $silo
+echo $silo
+echo $silo
+echo $silo
+
+
+[[ $# -eq 0 ]] && { silo=code; } || {
+	[[ $1 == code ]] && silo=code
+	[[ $1 == data ]] && silo=data
+	[[ $1 == site ]] && silo=site
+}
+
+echo $silo
+echo $silo
+echo $silo
+echo $silo
+echo $silo
+echo $silo

@@ -7,6 +7,9 @@ cd /a
 [[ -d /a/void/push ]] && rm --force --recursive /a/void/push
 cp --recursive /a/code /a/void/push
 
+[[ -d /a/void/push/data ]] && rm --force --recursive /a/void/push/data
+cp --recursive /a/void/data /a/void/push/data
+
 set -o noglob
 
 site=s3://www.subhelion.com
@@ -15,10 +18,17 @@ cd /a/void/push
 
 set -o xtrace
 
-aws --profile subhelion.com s3 rm     s3://www.subhelion.com --recursive --exclude "data/*"
-aws --profile subhelion.com s3 sync . s3://www.subhelion.com --include "*/*.html" --content-type text/html
-aws --profile subhelion.com s3 sync . s3://www.subhelion.com --include "*/*.js"   --content-type text/javascript
-aws --profile subhelion.com s3 sync . s3://www.subhelion.com --include "*/*.css"  --content-type text/css
+aws --profile subhelion.com s3 rm                s3://www.subhelion.com --recursive --exclude "data/*"
+aws --profile subhelion.com s3 sync /a/void/push s3://www.subhelion.com --exclude "*" --include "*.html" --content-type text/html
+aws --profile subhelion.com s3 sync /a/void/push s3://www.subhelion.com --exclude "*" --include "*.js"   --content-type text/javascript
+aws --profile subhelion.com s3 sync /a/void/push s3://www.subhelion.com --exclude "*" --include "*.css"  --content-type text/css
+
+# todo maybe another path just to push new data not flush and replace
+
+true || {
+	aws --profile subhelion.com s3 rm                s3://www.subhelion.com/data --recursive
+	aws --profile subhelion.com s3 sync /a/void/push/data s3://www.subhelion.com/data
+}
 
 set +o xtrace
 
