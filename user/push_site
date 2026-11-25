@@ -4,7 +4,7 @@ set -o errexit
 
 cd /a
 
-md                     /a/void/push
+[[ -d /a/void/push ]] && rm --force --recursive /a/void/push
 cp --recursive /a/code /a/void/push
 
 set -o noglob
@@ -15,7 +15,7 @@ cd /a/void/push
 
 set -o xtrace
 
-aws --profile subhelion.com s3 rm     s3://www.subhelion.com --recursive
+aws --profile subhelion.com s3 rm     s3://www.subhelion.com --recursive --exclude "data/*"
 aws --profile subhelion.com s3 sync . s3://www.subhelion.com --include "*/*.html" --content-type text/html
 aws --profile subhelion.com s3 sync . s3://www.subhelion.com --include "*/*.js"   --content-type text/javascript
 aws --profile subhelion.com s3 sync . s3://www.subhelion.com --include "*/*.css"  --content-type text/css

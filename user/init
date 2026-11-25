@@ -5,7 +5,7 @@ set -o allexport
 
 use a
 
-[[ -s /a/code/data ]] || ln --symbolic /a/void/data /a/code/data
+[[ -h /a/code/data ]] || ln --symbolic /a/void/data /a/code/data
 
 path /a/user
 
