@@ -4,12 +4,14 @@ function push_code() {
 	code_push
 }
 
-silo=none
+skip ${user_silo:=none}
+silo=$user_silo
 
 [[ $# -eq 0 ]] && { silo=code; } || {
 	[[ $1 == code ]] && silo=code
 	[[ $1 == data ]] && silo=data
 	[[ $1 == site ]] && silo=site
+	[[ $1 == all  ]] && silo=all
 	shift
 }
 
@@ -17,3 +19,9 @@ echo silo: $silo
 
 [[ $silo == code ]] && code_push "$@"
 [[ $silo == site ]] && site_push "$@"
+
+[[ $silo == all ]] && {
+	code_push
+	site_push
+	site_push all
+}

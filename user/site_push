@@ -25,8 +25,8 @@ aws --profile subhelion.com s3 sync /a/void/push s3://www.subhelion.com --exclud
 
 # todo maybe another path just to push new data not flush and replace
 
-true || {
-	aws --profile subhelion.com s3 rm                s3://www.subhelion.com/data --recursive
+[[ $1 == all ]] && {
+	aws --profile subhelion.com s3 rm                     s3://www.subhelion.com/data --recursive
 	aws --profile subhelion.com s3 sync /a/void/push/data s3://www.subhelion.com/data
 }
 
