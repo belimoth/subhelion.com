@@ -1,24 +1,12 @@
 #!/bin/bash
 
-echo ok ok ok
+echo ok
 
 function push_code() {
-
-}
-
-function push_site() {
-
+	code_push
 }
 
 silo=none
-
-echo $silo
-echo $silo
-echo $silo
-echo $silo
-echo $silo
-echo $silo
-
 
 [[ $# -eq 0 ]] && { silo=code; } || {
 	[[ $1 == code ]] && silo=code
@@ -26,9 +14,4 @@ echo $silo
 	[[ $1 == site ]] && silo=site
 }
 
-echo $silo
-echo $silo
-echo $silo
-echo $silo
-echo $silo
 echo $silo

@@ -7,8 +7,6 @@ use a
 
 [[ -h /a/code/data ]] || ln --symbolic /a/void/data /a/code/data
 
+cd   /a
 path /a/user
-
-cd /a
-
-MSYS_NO_PATHCONV=1 code /a --reuse-window
+code /a --reuse-window
