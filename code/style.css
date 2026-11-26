@@ -29,6 +29,15 @@ html {
 	--coco-2: #FDF5E8;
 
 	--swsh: #E4499C;
+
+	--neoc: #6BA8B4;
+
+	--dci0: #000000;
+	--dci1: #FFFFFF;
+	--dci2: #B90080;
+	--dci3: #F7E75A;
+	--dci4: #D15371;
+	--dci5: #DB7E6B;
 }
 
 html[dark] {
@@ -62,22 +71,6 @@ body {
 
 body > * {
 	user-select: none;
-}
-
-page {
-	display: none;
-}
-
-page:first-child {
-	display: block;
-}
-
-page[hide] {
-	display: none;
-}
-
-page[show] {
-	display: block;
 }
 
 h1, h2, h3, h4, h5, p {
@@ -195,10 +188,14 @@ div > a[tri] {
 	max-width: 100px;
 }
 
-section > a:hover,
-section > a:active,
-div > a:hover,
-div > a:active {
+
+
+
+
+div:not([app]) > a:hover,
+div:not([app]) > a:active,
+div[app] > a[none]:hover,
+div[app] > a[none]:active {
 	color: var( --bg );
 }
 
@@ -291,34 +288,21 @@ output {
 	line-height: 60px;
 }
 
-div + div {
-	margin-top: 10px;
-}
-
 div[pub] > a {
 	text-decoration: underline;
 }
 
-dci_palette {
-	--dci-0: #000000;
-	--dci-1: #FFFFFF;
-	--dci-2: #B90080;
-	--dci-3: #F7E75A;
-	--dci-4: #D15371;
-	--dci-5: #DB7E6B;
-}
-
 a[dci] {
-	background: #B90080;
-	color: #F7E75A;
+	background: var(--dci2);
+	color: var(--dci3);
 	font-weight: 600;
 	text-decoration: none;
 }
 
 a[dci]:hover,
 a[dci]:active {
-	background: #F7E75A;
-	color: #B90080;
+	background: var(--dci3);
+	color: var(--dci2);
 }
 
 div[app] > a {
@@ -456,16 +440,26 @@ p > a:active {
 img {
 	width: 60px;
 	height: 60px;
-	border: 2px solid var( --pri );
+	box-shadow: 0 0 0 3px var( --bg );
 	border-radius: 30px;
+	padding: 3px;
+	margin: 3px 3px;
+}
+
+img:not([src]) {
+	opacity: 0;
 }
 
 img[pub] {
-	border-color: var( --pub );
+	box-shadow: 0 0 0 3px var( --pub );
 }
 
 img[per] {
-	border-color: var( --per );
+	box-shadow: 0 0 0 3px var( --per );
+}
+
+img[pri] {
+	box-shadow: 0 0 0 3px var( --pri );
 }
 
 output + h2 {
@@ -505,4 +499,299 @@ a[peer] {
 
 div[app] a[peer] {
     line-height: 60px;
+}
+
+main > div > a {
+	width: 240px;
+	height: 240px;
+	line-height: 240px;
+}
+
+main > div {
+	width: 240px;
+	display: flex;
+	flex-direction: column;
+}
+
+div {
+	flex-wrap: wrap;
+}
+
+a[peer] {
+	line-height: 60px;
+}
+
+a[peer][x2] {
+	line-height: 20px;
+	padding-top: 10px;
+}
+
+a[peer][x3] {
+	line-height: 20px;
+}
+
+div[app] + div {
+	margin-top: 10px;
+}
+
+div {
+	max-width: 960px;
+	margin: auto;
+}
+
+main > div {
+	margin: 0;
+}
+
+div > section {
+	width: 180px;
+}
+
+
+
+
+
+
+div[dci] {
+	width: 100%;
+	flex-direction: column
+}
+
+div > p {
+	max-width: none;
+}
+
+a[dci] {
+	width: 100%;
+}
+
+div[dci] {
+	outline: 10px solid var(--dci2);
+	background: var(--dci3);
+	color: var(--dci2);
+	padding: 5px;
+}
+
+
+
+
+
+
+
+
+div[clay] {
+	width: 100%;
+	flex-direction: column;
+	--bg: #DDD;
+}
+
+h4 + div[clay] {
+	margin-top: 40px;
+}
+
+div > p {
+	max-width: none;
+}
+
+div[clay] > a {
+	width: 100%;
+	background: var(--fg);
+	color: var(--bg);
+}
+
+div[clay] > a:hover,
+div[clay] > a:active {
+	background: var(--bg);
+	color: var(--fg);
+}
+
+div[clay] {
+	outline: 10px solid var(--fg);
+	background: var(--bg);
+	color: var(--fg);
+	padding: 5px;
+}
+
+
+
+
+
+a[pub][wip] {
+	background: var(--bg);
+	color: var(--pub);
+	box-shadow: inset 0 0 0 3px var(--pub);
+	padding: 0;
+}
+
+a[pri][wip] {
+	background: var(--bg);
+	color: var(--pri);
+	box-shadow: inset 0 0 0 3px var(--pri);
+	padding: 0;
+}
+
+a[per][wip] {
+	background: var(--bg);
+	color: var(--per);
+	box-shadow: inset 0 0 0 3px var(--per);
+	padding: 0;
+}
+
+a[pub] {
+	padding: 0;
+}
+
+a[pri] {
+	padding: 0;
+}
+
+a[per] {
+	padding: 0;
+}
+
+
+
+div[dci] > a[dci]:hover,
+div[dci] > a[dci]:active {
+	color: var(--dci2);
+}
+
+
+
+
+a[neocities] {
+	background: var(--neoc);
+	color: #fff;
+}
+
+a[neocities]:hover,
+a[neocities]:active {
+	background: #fff;
+	color: var(--neoc);
+}
+
+
+
+div[eta] {
+	width: 100%;
+	flex-direction: column;
+	outline: 10px solid var(--fg);
+	--bg: #DDD;
+	background: var(--bg);
+	--fg: #AAA;
+	padding: 5px;
+}
+
+date {
+	color: var(--fg);
+}
+
+div[eta] > a:hover {
+	outline: none;
+}
+
+div {
+	margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+a[ghost] {
+	background: var(--bg);
+	--bg: #15171A;
+	color: #D1FF19;
+}
+
+a[ghost]:hover,
+a[ghost]:active {
+	--bg: #D1FF19;
+	color: #15171A;
+}
+
+
+
+
+
+img[map] {
+	width: 960px;
+	height: 480px;
+}
+
+
+
+
+
+
+html {
+	overflow: hidden;
+	height: 100vh;
+}
+
+body {
+	overflow: hidden;
+	position: relative;
+	height: 100vh;
+	margin: 0;
+}
+
+page {
+	overflow-y: scroll;
+
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	opacity: 0;
+
+	min-height: calc( 100vh - 40px );
+	min-width: 100%;
+	height: 100%;
+
+	transition: opacity 0.2s linear;
+}
+
+page:target {
+	opacity: 1;
+}
+
+page:not(:target) {
+	pointer-events: none;
+	opacity: 0;
+}
+
+page[pub] {
+	--bg: var(--pub);
+	--fg: #FFF;
+	background: var(--bg);
+	color: var(--fg);
+}
+
+page[pri] {
+	--bg: var(--pri);
+	--fg: #FFF;
+	background: var(--bg);
+	color: var(--fg);
+}
+
+page[per] {
+	--bg: var(--per);
+	--fg: #FFF;
+	background: var(--bg);
+	color: var(--fg);
+}
+
+page:not(#home) {
+	overflow: hidden;
+}
+
+page:not(#home) a:hover,
+page:not(#home) a:active {
+	--fg: #FFF;
+	background: var(--fg);
+	color: var(--bg);
 }
