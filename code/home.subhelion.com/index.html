@@ -2,11 +2,14 @@
 <html lang=en-us>
 <head>
 <meta charset=utf-8>
+
 <title>SUBHELION</title>
-<meta name=viewport content="width=device-width, initial-scale=1">
+
 <meta name=apple-mobile-web-app-capable content=yes>
-<meta name=apple-mobile-web-app-title content=SUBHELION>
-<link rel=manifest href=/manifest.json>
+<meta name=apple-mobile-web-app-title   content=SUBHELION>
+<meta name=viewport                     content="width=device-width, initial-scale=1">
+
+<link rel=manifest                 href=/manifest.json>
 <link rel=stylesheet type=text/css href=style.css>
 
 <body>
@@ -14,10 +17,9 @@
 <page id=home>
 
 <top>
-	<h2><a pub top >Menu</a><a per top><img>None</a><span>WELCOME TO <a home href=https://subhelion.com>SUBHELION.COM</a></span></h2>
+	<h2>
+		<a pub top >Menu</a><a per top><img>None</a><span>WELCOME TO <a home href=https://subhelion.com>SUBHELION.COM</a></span></h2>
 </top>
-
-<output>WARNING: This page is drafty.</output>
 
 <br>
 <br>
@@ -25,6 +27,10 @@
 <form><input placeholder=Find…></input><a href=find>FIND</a></form>
 
 <br>
+<br>
+
+<output>WARNING: This page is drafty.</output>
+
 <br>
 
 <main>
@@ -455,26 +461,37 @@
 
 <main style>
 <h1 game><b>Style</b><a like></a></h1>
-<a game href=#play/genre/2d               ><img><b>2D</b></a>
-<a game href=#play/genre/3d           like><img><b>3D</b></a>
-<a game href=#play/genre/singleplayer     ><img><b>Singleplayer</b></a>
-<a game href=#play/genre/multiplayer  like><img><b>Multiplayer</b></a>
-<a game href=#play/genre/casual           ><img><b>Casual</b></a>
-<a game href=#play/genre/short            ><img><b>Short</b></a>
+<a game href=#play/style/form><img><b>Controls: Any</b></a>
+<a game href=#play/style/type><img><b>Format: Any</b></a> <!-- Easy, Casual, Competitive, Difficult, Formal -->
+<a game href=#play/style/game><img><b>Game: Any</b></a>
+<a game href=#play/style/pace><img><b>Pace: Any</b></a> <!-- Arcade, Endless, Long, Short -->
+<a game href=#play/style/play><img><b>Players: Any</b></a> <!-- Solo, Pair, Multi, Wave -->
+<a game href=#play/style/view><img><b>View: Any</b></a> <!-- 2D, 3D, Mix; First-person, Fixed, Side-scrolling, Third-person, Top-down -->
+
 </main>
 
 <main game>
-<h1 game><a href=#play/>New Games</a></h1>
-<a game href=#play/game/new/1     ><img><b>Game 1</b></a>
-<a game href=#play/game/new/2     ><img><b>Game 2</b></a>
+<h1 game><a href=#play/>Any </a></h1>
+<a game href=#play/game/new/1         ><img><b>Game 1</b></a>
+<a game href=#play/game/new/2         ><img><b>Game 2</b></a>
 <a game href=#play/game/new/3 like><img><b>Game 3</b></a>
-<a game href=#play/game/new/4     ><img><b>Game 4</b></a>
-<a game href=#play/game/new/5     ><img><b>Game 5</b></a>
+<a game href=#play/game/new/4         ><img><b>Game 4</b></a>
+<a game href=#play/game/new/5         ><img><b>Game 5</b></a>
 <a game href=#play/game/new/6 like><img><b>Game 6</b></a>
 </main>
 
 <main game>
-<h1 game><a href=#play/>Top Games</a></h1>
+<h1 game><a href=#play/>New </a></h1>
+<a game href=#play/game/new/1         ><img><b>Game 1</b></a>
+<a game href=#play/game/new/2         ><img><b>Game 2</b></a>
+<a game href=#play/game/new/3 like><img><b>Game 3</b></a>
+<a game href=#play/game/new/4         ><img><b>Game 4</b></a>
+<a game href=#play/game/new/5         ><img><b>Game 5</b></a>
+<a game href=#play/game/new/6 like><img><b>Game 6</b></a>
+</main>
+
+<main game>
+<h1 game><a href=#play/>Top </a></h1>
 <a game href=#play/game/top/1 like><img><b>Game 1</b></a>
 <a game href=#play/game/top/2 like><img><b>Game 2</b></a>
 <a game href=#play/game/top/3 like><img><b>Game 3</b></a>
@@ -483,7 +500,7 @@
 <a game href=#play/game/top/6 like><img><b>Game 6</b></a>
 </main>
 
-<main game>
+<!-- <main game>
 <h1 game><a href=#play/>Authors</a></h1>
 <a game user href#play/author/1 like><img><b>Author 1</b></a>
 <a game user href#play/author/2 like><img><b>Author 2</b></a>
@@ -491,40 +508,127 @@
 <a game user href#play/author/4     ><img><b>Author 4</b></a>
 <a game user href#play/author/5     ><img><b>Author 5</b></a>
 <a game user href#play/author/6 like><img><b>Author 6</b></a>
+</main> -->
+
+<h1>Choose a mascot</h1>
+
+<side>
+<!-- <a>[touhou] 2D, Scrolling, Dodging, Fashion, Progressing, Shooting, Upgrading </a> -->
+</side>
+
+<h1>game</h1>
+
+<main genre>
+
+<a game like href=#play/genre/cards        ><img><b>Card Games</b></a>
+<a game like href=#play/genre/custom       ><img><b>Customizing</b></a>
+<a game like href=#play/genre/exploring    ><img><b>Exploring</b></a>
+<a game like href=#play/genre/finding      ><img><b>Finding</b></a>
+<a game like href=#play/genre/racing       ><img><b>Racing</b></a>
+<a game like href=#play/genre/random       ><img><b>Random</b></a>
+<a game like href=#play/genre/shooting     ><img><b>Shooting</b></a>
+<a game like href=#play/genre/simulating   ><img><b>Simulating</b></a>
+<a game like href=#play/genre/surviving    ><img><b>Surviving</b></a>
+<a game      href=#play/genre/bases        ><img><b>Base-building</b></a>
+<a game      href=#play/genre/boards       ><img><b>Board Games</b></a>
+<a game      href=#play/genre/building     ><img><b>Building</b></a>
+<a game      href=#play/genre/chasing      ><img><b>Chasing</b></a>
+<a game      href=#play/genre/classic      ><img><b>Classic RPG</b></a>
+<a game      href=#play/genre/collecting   ><img><b>Collecting</b></a>
+<a game      href=#play/genre/commanding   ><img><b>Commanding</b></a>
+<a game      href=#play/genre/cooking      ><img><b>Cooking</b></a>
+<a game      href=#play/genre/dating       ><img><b>Dating</b></a>
+<a game      href=#play/genre/deck         ><img><b>Deck-building</b></a>
+<a game      href=#play/genre/dice         ><img><b>Dice Games</b></a>
+<a game      href=#play/genre/dodging      ><img><b>Dodging</b></a>
+<a game      href=#play/genre/driving      ><img><b>Driving</b></a>
+<a game      href=#play/genre/escaping     ><img><b>Escaping</b></a>
+<a game      href=#play/genre/experimenting><img><b>Experimenting</b></a>
+<a game      href=#play/genre/farming      ><img><b>Farming</b></a>
+<a game      href=#play/genre/fashion      ><img><b>Fashion</b></a>
+<a game      href=#play/genre/fiction      ><img><b>Fiction Games</b></a>
+<a game      href=#play/genre/fighting     ><img><b>Fighting</b></a>
+<a game      href=#play/genre/flying       ><img><b>Flying</b></a>
+<a game      href=#play/genre/growing      ><img><b>Growing</b></a>
+<a game      href=#play/genre/hiding       ><img><b>Hiding</b></a>
+<a game      href=#play/genre/hunting      ><img><b>Hunting, Fishing, Trapping</b></a>
+<a game      href=#play/genre/jumping      ><img><b>Jumping</b></a>
+<a game      href=#play/genre/music        ><img><b>Music, Rhythm Games</b></a>
+<a game      href=#play/genre/pointing     ><img><b>Pointing</b></a>
+<a game      href=#play/genre/progressing  ><img><b>Progressing</b></a>
+<a game      href=#play/genre/relaxing     ><img><b>Relaxing</b></a>
+<a game      href=#play/genre/role         ><img><b>Role-playing</b></a>
+<a game      href=#play/genre/running      ><img><b>Running</b></a>
+<a game      href=#play/genre/sneaking     ><img><b>Sneaking</b></a>
+<a game      href=#play/genre/text         ><img><b>Text Games</b></a>
+<a game      href=#play/genre/ttrpg        ><img><b>TTRPG</b></a>
+<a game      href=#play/genre/upgrading    ><img><b>Upgrading</b></a>
+<a game      href=#play/genre/waiting      ><img><b>Waiting</b></a>
+<a game      href=#play/genre/walking      ><img><b>Walking</b></a>
+
 </main>
+
+<h1>genre</h1>
 
 <main genre>
 <!-- <h1 game>Genres</h1> -->
-<a game href=#play/genre/action         like><img><b>Action</b></a>
-<a game href=#play/genre/adventure      like><img><b>Adventure</b></a>
-<a game href=#play/genre/arcade             ><img><b>Arcade</b></a>
-<!-- <a game href=#play/genre/cards              ><img><b>Cards</b></a> -->
-<a game href=#play/genre/exploration    like><img><b>Exploration</b></a>
-<!-- <a game href=#play/genre/fantasy            ><img><b>Fantasy</b></a> -->
-<a game href=#play/genre/fiction            ><img><b>Fiction</b></a>
-<a game href=#play/genre/history            ><img><b>History</b></a>
-<!-- <a game href=#play/genre/horror             ><img><b>Horror</b></a> -->
-<a game href=#play/genre/jumping            ><img><b>Jumping</b></a>
-<!-- <a game href=#play/genre/medieval       like><img><b>Medieval</b></a> -->
-<!-- <a game href=#play/genre/military       like><img><b>Military</b></a> -->
-<a game href=#play/genre/mystery            ><img><b>Mystery</b></a>
-<a game href=#play/genre/physics            ><img><b>Physics</b></a>
-<a game href=#play/genre/puzzle             ><img><b>Puzzle</b></a>
-<a game href=#play/genre/random         like><img><b>Random</b></a>
-<a game href=#play/genre/rhythm             ><img><b>Rhythm</b></a>
-<a game href=#play/genre/romance            ><img><b>Romance</b></a>
-<a game href=#play/genre/rpg                ><img><b>RPG</b></a>
-<a game href=#play/genre/scifi          like><img><b>Sci-Fi</b></a>
-<a game href=#play/genre/shooter        like><img><b>Shooter</b></a>
-<a game href=#play/genre/simulation     like><img><b>Simulation</b></a>
-<a game href=#play/genre/story              ><img><b>Story</b></a>
-<!-- <a game href=#play/genre/space              ><img><b>Space</b></a> -->
-<a game href=#play/genre/strategy       like><img><b>Strategy</b></a>
-<a game href=#play/genre/survival       like><img><b>Survival</b></a>
-<!-- <a game href=#play/genre/top-down           ><img><b>Top-down</b></a> -->
-<!-- <a game href=#play/genre/side-scrolling     ><img><b>Side-scrolling</b></a> -->
-<a game href=#play/genre/turn-based     like><img><b>Turn-based</b></a>
-<!-- <a game href=#play/genre/text-based         ><img><b>Text-based</b></a> -->
+<a game like href=#play/genre/action     ><img><b>Action</b></a>
+<a game like href=#play/genre/adventure  ><img><b>Adventure</b></a>
+<a game like href=#play/genre/castles    ><img><b>Castles, Ruins</b></a>
+<a game like href=#play/genre/dinosaurs  ><img><b>Dinosaurs, Fossils</b></a>
+<a game like href=#play/genre/middle     ><img><b>Middle Ages</b></a>
+<a game like href=#play/genre/military   ><img><b>Military, War</b></a>
+<a game like href=#play/genre/monsters   ><img><b>Monsters</b></a>
+<a game like href=#play/genre/sandbox    ><img><b>Sandbox</b></a>
+<a game like href=#play/genre/scifi      ><img><b>Science-Fiction</b></a>
+<a game like href=#play/genre/strategy   ><img><b>Strategy</b></a>
+<a game like href=#play/genre/surreal    ><img><b>Surreal</b></a>
+<a game like href=#play/genre/underwater ><img><b>Underwater</b></a>
+<a game like href=#play/genre/unique     ><img><b>Unique</b></a>
+<a game      href=#play/genre/aliens     ><img><b>Aliens</b></a>
+<a game      href=#play/genre/animals    ><img><b>Animals</b></a>
+<a game      href=#play/genre/arcade     ><img><b>Arcade</b></a>
+<a game      href=#play/genre/armor      ><img><b>Armor, Knights, Mecha</b></a>
+<a game      href=#play/genre/astronauts ><img><b>Astronauts, Rockets</b></a>
+<a game      href=#play/genre/birds      ><img><b>Birds</b></a>
+<a game      href=#play/genre/bugs       ><img><b>Bugs, Critters</b></a>
+<a game      href=#play/genre/cats       ><img><b>Cats</b></a>
+<a game      href=#play/genre/city       ><img><b>Cities, Economies, Planning</b></a>
+<a game      href=#play/genre/crime      ><img><b>Crime, Police</b></a>
+<a game      href=#play/genre/custom     ><img><b>Drama</b></a>
+<a game      href=#play/genre/cute       ><img><b>Cute</b></a>
+<a game      href=#play/genre/cyberpunk  ><img><b>Cyberpunk</b></a>
+<a game      href=#play/genre/dark       ><img><b>Dark</b></a>
+<a game      href=#play/genre/dogs       ><img><b>Dogs</b></a>
+<a game      href=#play/genre/droids     ><img><b>Droids, Robots, Automatons</b></a>
+<a game      href=#play/genre/
+<a game      href=#play/genre/fantasy    ><img><b>Fantasy</b></a>
+<a game      href=#play/genre/folklore   ><img><b>Folklore, Mythology</b></a>
+<a game      href=#play/genre/fish       ><img><b>Fish</b></a>
+<a game      href=#play/genre/funny      ><img><b>Funny</b></a>
+<a game      href=#play/genre/germs      ><img><b>Germs</b></a>
+<a game      href=#play/genre/ghosts     ><img><b>Ghosts, Supernatural</b></a>
+<a game      href=#play/genre/history    ><img><b>History</b></a>
+<a game      href=#play/genre/horror     ><img><b>Horror</b></a>
+<a game      href=#play/genre/horses     ><img><b>Horses</b></a>
+<a game      href=#play/genre/mazes      ><img><b>Mazes</b></a>
+<a game      href=#play/genre/mystery    ><img><b>Mystery</b></a>
+<a game      href=#play/genre/outer      ><img><b>Outer Space, Planets</b></a>
+<a game      href=#play/genre/pets       ><img><b>Pets</b></a>
+<a game      href=#play/genre/physics    ><img><b>Physics</b></a>
+<a game      href=#play/genre/plants     ><img><b>Plants</b></a>
+<a game      href=#play/genre/puzzles    ><img><b>Puzzles</b></a>
+<a game      href=#play/genre/renaissance><img><b>Renaissance</b></a>
+<a game      href=#play/genre/rocks      ><img><b>Rocks, Minerals, Ores</b></a>
+<a game      href=#play/genre/romance    ><img><b>Romance</b></a>
+<a game      href=#play/genre/scary      ><img><b>Scary</b></a>
+<a game      href=#play/genre/sports     ><img><b>Sports</b></a>
+<a game      href=#play/genre/story      ><img><b>Story</b></a>
+<a game      href=#play/genre/underground><img><b>Underground</b></a>
+<a game      href=#play/genre/vehicles   ><img><b>Vehicles</b></a>
+<a game      href=#play/genre/weather    ><img><b>Weather</b></a>
+<a game      href=#play/genre/weird      ><img><b>Weird</b></a>
+<a game      href=#play/genre/words      ><img><b>Words</b></a>
 </main>
 
 <div h1><a h1><h1>More…</h1></a></div>

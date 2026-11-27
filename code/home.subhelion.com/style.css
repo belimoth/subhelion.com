@@ -64,6 +64,8 @@ input {
 	caret-color: currentColor;
 }
 
+/*  */
+
 body {
 	user-select: all;
 	overflow-x: hide;
@@ -1143,4 +1145,9 @@ page#play top > h2 > a:nth-child(2) > img {
 
 page#play top > h2 > a:nth-child(2) > img :not([src]) {
 	padding: 0;
+}
+
+
+main > div {
+
 }
