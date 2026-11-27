@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# xxhsum /a/code/data/image/user/*
+
+cd /a/void/push
+
+find . -type f |
+
+function f {
+	 $1
+}
+
+find . -type f -exec xxhsum {} \; | sed "s|./||"

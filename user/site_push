@@ -2,6 +2,8 @@
 
 set -o errexit
 
+git_check
+
 cd /a
 
 [[ -d /a/void/push ]] && rm --force --recursive /a/void/push
@@ -16,22 +18,52 @@ site=s3://www.subhelion.com
 
 cd /a/void/push
 
-set -o xtrace
+site_hash > /a/void/push/hash
+site_hash > /a/void/push/hash
 
-aws --profile subhelion.com s3 rm                s3://www.subhelion.com --recursive --exclude "data/*"
-aws --profile subhelion.com s3 sync /a/void/push s3://www.subhelion.com --exclude "*" --include "*.html" --content-type text/html
-aws --profile subhelion.com s3 sync /a/void/push s3://www.subhelion.com --exclude "*" --include "*.js"   --content-type text/javascript
-aws --profile subhelion.com s3 sync /a/void/push s3://www.subhelion.com --exclude "*" --include "*.css"  --content-type text/css
+# aws s3 static site
 
-# todo maybe another path just to push new data not flush and replace
+function site_push_aws {
+	set -o xtrace
 
-[[ $1 == all ]] && {
-	aws --profile subhelion.com s3 rm                     s3://www.subhelion.com/data --recursive
-	aws --profile subhelion.com s3 sync /a/void/push/data s3://www.subhelion.com/data
+	aws --profile subhelion.com s3 rm                s3://www.subhelion.com --recursive --exclude "data/*"
+	aws --profile subhelion.com s3 sync /a/void/push s3://www.subhelion.com --exclude "*" --include "*.html" --content-type text/html
+	aws --profile subhelion.com s3 sync /a/void/push s3://www.subhelion.com --exclude "*" --include "*.js"   --content-type text/javascript
+	aws --profile subhelion.com s3 sync /a/void/push s3://www.subhelion.com --exclude "*" --include "*.json" --content-type text/json
+	aws --profile subhelion.com s3 sync /a/void/push s3://www.subhelion.com --exclude "*" --include "*.css"  --content-type text/css
+
+	# todo maybe another path just to push new data not flush and replace
+
+	[[ $1 == all ]] && {
+		aws --profile subhelion.com s3 rm                     s3://www.subhelion.com/data --recursive
+		aws --profile subhelion.com s3 sync /a/void/push/data s3://www.subhelion.com/data
+	}
+
+	set +o xtrace
+
+	dist=E1KQI2QRNN6CYG
+
+	aws --profile subhelion.com cloudfront create-invalidation --distribution-id $dist --paths "/*"
 }
 
-set +o xtrace
+# cloudflare pages
 
-dist=E1KQI2QRNN6CYG
+function site_push_clf {
+	skip
+}
 
-aws --profile subhelion.com cloudfront create-invalidation --distribution-id $dist --paths "/*"
+# digital ocean
+
+function site_push_dio {
+	skip
+}
+
+# neocities
+
+function site_push_neo {
+	skip
+}
+
+
+
+cp /a/void/push/hash /a/hash
