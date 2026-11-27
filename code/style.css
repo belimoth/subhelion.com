@@ -437,7 +437,7 @@ p > a:active {
 	color: var( --bg );
 }
 
-img {
+img[user] {
 	width: 60px;
 	height: 60px;
 	box-shadow: 0 0 0 3px var( --bg );
@@ -446,19 +446,19 @@ img {
 	margin: 3px 3px;
 }
 
-img:not([src]) {
+img[user]:not([src]) {
 	opacity: 0;
 }
 
-img[pub] {
+img[user][pub] {
 	box-shadow: 0 0 0 3px var( --pub );
 }
 
-img[per] {
+img[user][per] {
 	box-shadow: 0 0 0 3px var( --per );
 }
 
-img[pri] {
+img[user][pri] {
 	box-shadow: 0 0 0 3px var( --pri );
 }
 
@@ -789,9 +789,358 @@ page:not(#home) {
 	overflow: hidden;
 }
 
+page:not(#home) top {
+	display: flex;
+	gap: 3px;
+}
+
+page:not(#home) top a {
+	flex: 1 1 0;
+	text-align: center;
+	background: var(--bg);
+	line-height: 60px;
+}
+
+page:not(#home) a[pub] {
+	--bg: var(--pub)
+}
+
+page:not(#home) a[pri] {
+	--bg: var(--pri)
+}
+
+page:not(#home) a[per] {
+	--bg: var(--per)
+}
+
 page:not(#home) a:hover,
 page:not(#home) a:active {
 	--fg: #FFF;
 	background: var(--fg);
 	color: var(--bg);
+}
+
+top a:not([href]) {
+	pointer-events: none;
+}
+
+form[sign] {
+	display: flex;
+	flex-direction: column;
+}
+
+form[sign] input {
+	max-width: 240px;
+	font-size: 56px;
+	line-height: 80px;
+	height: 80px;
+	font-family: monospace;
+}
+
+input[password] {
+	color: #FFF;
+	border-color: currentColor;
+	text-security: disc; -moz-text-security: disc; -webkit-text-security: disc;
+	caret-color: transparent;
+}
+
+a[game] {
+	display: flex;
+	font-size: 18px;
+	text-decoration-thickness: 1px;
+	flex-direction: column;
+	line-height: 40px;
+	text-decoration: none;
+	border: 10px solid #FFF;
+	overflow: hidden;
+}
+
+a[game] img {
+	display: block;
+	width: 300px;
+	height: 220px;
+	min-width: 300px;
+	min-height: 220px;
+	margin-bottom: -50px;
+}
+
+page:not(#home) {
+	overflow-y: auto;
+	user-select: none;
+}
+
+page:not(#home) > * {
+	user-select: none;
+}
+
+main,
+main > div {
+	gap: 6px;
+}
+
+a[game][like] {
+	position: relative;
+}
+
+a[game][like]::before {
+	content: "🎔";
+	display: block;
+	position: absolute;
+	bottom: 12.6px;
+	left: 18px;
+	color: #FFF;
+	font-size: 22px;
+}
+
+a[game][like]::after {
+	content: "🎔";
+	display: block;
+	position: absolute;
+	bottom: 12px;
+	left: 20px;
+	color: var(--per);
+}
+
+main[style] > a[game][like]::before,
+main[genre] > a[game][like]::before {
+	content: "🎔";
+	bottom: 0;
+	bottom: 16.6px;
+}
+
+main[style] > a[game][like]::after,
+main[genre] > a[game][like]::after {
+	content: "🎔";
+	bottom: 16px;
+}
+
+page#play main[style] > h1 {
+	display: flex;
+	flex-direction: row;
+	line-height: 90px;
+	height: 90px;
+}
+
+page#play main[style] > h1 > a[like] {
+	position: relative;
+	height: 90px;
+	width: 60px;
+	flex-shrink: 0;
+}
+
+page#play main[style] > h1 > b {
+	flex-grow: 1;
+	line-height: 90px;
+	height: 90px;
+}
+
+a[like]::before {
+	content: "🎔";
+	display: block;
+	position: absolute;
+	bottom: 12.6px;
+	left: 18px;
+	color: #FFF;
+	font-size: 22px;
+}
+
+a[like]::after {
+	content: "🎔";
+	display: block;
+	position: absolute;
+	bottom: 12px;
+	left: 20px;
+	color: var(--per);
+}
+
+old {
+	content: "❤︎";
+}
+
+h1[game] {
+	width: 320px;
+	line-height: 240px;
+	font-size: 32px;
+	margin: 0;
+	user-select: none;
+}
+
+page:not(#home) main {
+	margin: 6px 0;
+	justify-content: center;
+}
+
+page:not(#home) input {
+	border-color: #FFF;
+	color: #FFF;
+}
+
+page:not(#home) input::placeholder {
+	color: rgba( 255, 255, 255, 0.4 );
+}
+
+a > h1 {
+	margin: 0;
+	line-height: 90px;
+	user-select: none;
+}
+
+a[h1] {
+	width: calc( 100% - 20px );
+	background: var(--fg);
+	color: var(--bg);
+	gap: 0;
+	line-height: 90px;
+	height: 90px;
+}
+
+div[h1] {
+	width: 100%;
+	max-width: 100%;
+	max-width: 2296px;
+	margin: 6px auto;
+	flex-grow: 1;
+	gap: 0;
+}
+
+page:not(#home) div[h1] > a[h1]:hover,
+page:not(#home) div[h1] > a[h1]:active {
+	--fg: #000;
+	background: #000;
+	color: #FFF;
+}
+
+main > a[game] {
+	flex: 0 0 320px;
+	width: 320px;
+	max-width: 320px;
+}
+
+main[style] > h1 > a {
+	height: 240px;
+	line-height: 240px;
+	display: block;
+	text-decoration: none;
+	color: var(--bg);
+	background: var(--fg);
+}
+
+main[style] > a[game],
+main[genre] > a[game] {
+	height: 90px;
+}
+
+main[style] > a[game] > img,
+main[genre] > a[game] > img {
+	height: 70px;
+	min-height: 70px;
+	margin-bottom: -55px;
+}
+
+main[style] > a[game] > b,
+main[genre] > a[game] > b {
+	top: 0;
+}
+
+main[style] > h1[game] {
+	height: 90px;
+	line-height: 90px;
+}
+
+page#play > main {
+	max-width: 2296px;
+	margin: 6px auto;
+}
+
+page#play > top {
+	max-width: 2296px;
+	margin: 6px auto;
+	padding: 0 10px;
+}
+
+main[style] > h1[game] > a[like] {
+	line-height: 80px;
+	text-align: center;
+	width: 90px;
+	flex-shrink: 0;
+	min-width: 90px;
+	padding-left: 20px;
+}
+
+main[style] > h1[game] > a[like]::before {
+	position: absolute;
+	top: 0;
+	left: 30px;
+}
+
+main[style] > h1[game] > a[like]::after {
+	position: absolute;
+	top: 0;
+	left: 30px;
+	color: var(--pub);
+}
+
+main[style] > h1[game] > a[like]::after {
+	position: absolute;
+	top: 0;
+	left: 30px;
+	color: var(--pub);
+}
+
+main[game] > h1[game] > a {
+	--fg: var(--pub);
+	--bg: #FFF;
+	background: var(--bg);
+	color: var(--fg);
+	width: 100%;
+	display: block;
+	text-decoration: none;
+}
+
+page#play main[game] > h1[game] > a:hover,
+page#play main[game] > h1[game] > a:active {
+	background: #000;
+	color: var(--pub);
+	outline-color: #000;
+}
+
+top > h2 > a:nth-child(1) {
+	float: left;
+}
+
+top > h2 > a:nth-child(2) {
+	float: right;
+}
+
+top > h2 > b {
+	flex-grow: 1;
+}
+
+top > h2 {
+	width: 100%;
+}
+
+page#play top > h2 > a {
+	color: #000;
+}
+
+page#play top > h2 > a:nth-child(2) {
+	background: transparent;
+	color: var(--per);
+	position: relative;
+}
+
+page#play top > h2 > a:nth-child(2) > img {
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	left: -60px;
+	border-radius: 30px;
+	padding: 1.5px;
+	box-shadow: inset 0 0 0 3px #FFF;
+
+}
+
+page#play top > h2 > a:nth-child(2) > img :not([src]) {
+	padding: 0;
 }
