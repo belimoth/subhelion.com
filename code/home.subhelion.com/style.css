@@ -1146,8 +1146,3 @@ page#play top > h2 > a:nth-child(2) > img {
 page#play top > h2 > a:nth-child(2) > img :not([src]) {
 	padding: 0;
 }
-
-
-main > div {
-
-}
