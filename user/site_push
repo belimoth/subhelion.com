@@ -64,6 +64,6 @@ function site_push_neo {
 	skip
 }
 
-
+site_push_aws
 
 cp /a/void/push/hash /a/hash
