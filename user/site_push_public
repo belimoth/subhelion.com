@@ -12,18 +12,19 @@ cp --recursive /a/code /a/void/push
 [[ -d /a/void/push/data ]] && rm --force --recursive /a/void/push/data
 cp --recursive /a/void/data /a/void/push/data
 
-set -o noglob
-
-site=s3://www.subhelion.com
+site_hash > /a/hash/public
+site_hash > /a/hash/public
+cp /a/hash/public /a/void/push/hash
 
 cd /a/void/push
-
-site_hash > /a/void/push/hash
-site_hash > /a/void/push/hash
 
 # aws s3 static site
 
 function site_push_aws {
+	set -o noglob
+
+	site=s3://www.subhelion.com
+
 	set -o xtrace
 
 	aws --profile subhelion.com s3 rm                s3://www.subhelion.com --recursive --exclude "data/*"
@@ -65,5 +66,3 @@ function site_push_neo {
 }
 
 site_push_aws
-
-cp /a/void/push/hash /a/hash

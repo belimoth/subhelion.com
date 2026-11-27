@@ -5,7 +5,20 @@ set -o allexport
 
 use a
 
-[[ -h /a/code/data ]] || ln --symbolic /a/void/data /a/code/data
+[[ -h /a/code/cafe.subhelion.com/data ]] || ln --symbolic /a/void/data /a/code/cafe.subhelion.com/data
+[[ -h /a/code/chat.subhelion.com/data ]] || ln --symbolic /a/void/data /a/code/chat.subhelion.com/data
+[[ -h /a/code/code.subhelion.com/data ]] || ln --symbolic /a/void/data /a/code/code.subhelion.com/data
+[[ -h /a/code/data.subhelion.com/data ]] || ln --symbolic /a/void/data /a/code/data.subhelion.com/data
+[[ -h /a/code/fund.subhelion.com/data ]] || ln --symbolic /a/void/data /a/code/fund.subhelion.com/data
+[[ -h /a/code/help.subhelion.com/data ]] || ln --symbolic /a/void/data /a/code/help.subhelion.com/data
+[[ -h /a/code/home.subhelion.com/data ]] || ln --symbolic /a/void/data /a/code/home.subhelion.com/data
+[[ -h /a/code/play.subhelion.com/data ]] || ln --symbolic /a/void/data /a/code/play.subhelion.com/data
+[[ -h /a/code/read.subhelion.com/data ]] || ln --symbolic /a/void/data /a/code/read.subhelion.com/data
+[[ -h /a/code/shop.subhelion.com/data ]] || ln --symbolic /a/void/data /a/code/shop.subhelion.com/data
+[[ -h /a/code/site.subhelion.com/data ]] || ln --symbolic /a/void/data /a/code/site.subhelion.com/data
+[[ -h /a/code/user.subhelion.com/data ]] || ln --symbolic /a/void/data /a/code/user.subhelion.com/data
+[[ -h /a/code/vote.subhelion.com/data ]] || ln --symbolic /a/void/data /a/code/vote.subhelion.com/data
+[[ -h /a/code/wave.subhelion.com/data ]] || ln --symbolic /a/void/data /a/code/wave.subhelion.com/data
 
 cd   /a
 path /a/user

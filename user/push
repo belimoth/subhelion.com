@@ -11,17 +11,20 @@ silo=$user_silo
 	[[ $1 == code ]] && silo=code
 	[[ $1 == data ]] && silo=data
 	[[ $1 == site ]] && silo=site
+	[[ $1 == user ]] && silo=user
 	[[ $1 == all  ]] && silo=all
 	shift
 }
 
 echo silo: $silo
 
-[[ $silo == code ]] && code_push "$@"
-[[ $silo == site ]] && site_push "$@"
+[[ $silo == code ]] && code_push      "$@"
+[[ $silo == site ]] && site_push      "$@"
+[[ $silo == user ]] && site_push_user "$@"
 
 [[ $silo == all ]] && {
 	code_push
-	site_push
-	site_push all
+	site_push_user
+	site_push_public
+	site_push_public all
 }

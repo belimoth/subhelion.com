@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -o errexit
+
+git_check
+
+cd /a
+
+site_hash > /a/hash/user
+site_hash > /a/hash/user
+# cp /a/hash/public $user_path/text/hash # todo
+
+cd /a/void/push
